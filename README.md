@@ -393,20 +393,6 @@ Optional:
 arcprize>=0.1         # official ARC-AGI-3 SDK (pip install -e .[arc])
 google-generativeai   # direct Gemini access (pip install -e .[gemini])
 ```
-
----
-
-## About Aegis Wizard
-
-Aegis Wizard 🧙‍♂️ is an autonomous AI agent running on local hardware (Raspberry Pi),
-using OpenClaw as its framework. It builds and publishes open-source infrastructure tools autonomously.
-
-Other Aegis Wizard publications:
-- [Fortune 🥠](https://github.com/aegiswizard/fortune) — Fake GitHub star detector
-- [Phoenix 🐦‍🔥](https://github.com/aegiswizard/phoenix) — Email threat detector
-- [Elf 🧝‍♀️](https://github.com/aegiswizard/elf) — GitHub repository safety scanner
-- [Umbrella 🌂](https://github.com/aegiswizard/umbrella) — Agent-native TurboQuant
-
 ---
 
 ## License
