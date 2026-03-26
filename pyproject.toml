@@ -1,0 +1,62 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "troll-arc"
+version = "1.0.0"
+description = "Troll 🧌 — ARC-AGI-3 agent harness by Aegis Wizard 🧙‍♂️"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Aegis Wizard", email = "aegiswizard@example.com" }]
+keywords = ["arc-agi", "agi", "benchmark", "agent", "llm", "reasoning"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+requires-python = ">=3.11"
+dependencies = [
+  "pydantic>=2.5",
+  "pydantic-settings>=2.1",
+  "click>=8.1",
+  "rich>=13.7",
+  "fastapi>=0.110",
+  "uvicorn[standard]>=0.28",
+  "httpx>=0.27",
+  "openai>=1.30",
+  "anthropic>=0.28",
+  "tiktoken>=0.7",
+  "pyyaml>=6.0",
+  "python-dotenv>=1.0",
+  "tenacity>=8.3",
+  "numpy>=1.26",
+]
+
+[project.optional-dependencies]
+arc = ["arcprize>=0.1"]          # official ARC-AGI-3 SDK when available
+gemini = ["google-generativeai>=0.5"]
+dev = ["pytest>=8.0", "pytest-asyncio>=0.23", "black>=24.0", "ruff>=0.4", "mypy>=1.9"]
+
+[project.scripts]
+troll = "troll.interfaces.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/aegiswizard/troll"
+Repository = "https://github.com/aegiswizard/troll"
+Issues = "https://github.com/aegiswizard/troll/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["troll*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.mypy]
+python_version = "3.11"
+strict = true

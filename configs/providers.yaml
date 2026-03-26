@@ -1,0 +1,122 @@
+# configs/providers.yaml
+# Troll 🧌 provider and model configuration.
+# Extend this file to add new providers or models.
+
+providers:
+
+  openai:
+    name: openai
+    api_key_env: OPENAI_API_KEY
+    models:
+      gpt-4o-mini:
+        id: gpt-4o-mini
+        display_name: "GPT-4o Mini"
+        multimodal: true
+        context_window: 128000
+        cost_per_1k_input: 0.000150
+        cost_per_1k_output: 0.000600
+        tier: budget
+
+      gpt-4o:
+        id: gpt-4o
+        display_name: "GPT-4o"
+        multimodal: true
+        context_window: 128000
+        cost_per_1k_input: 0.002500
+        cost_per_1k_output: 0.010000
+        tier: mid
+
+      o4-mini:
+        id: o4-mini
+        display_name: "o4-mini"
+        multimodal: true
+        context_window: 200000
+        cost_per_1k_input: 0.001100
+        cost_per_1k_output: 0.004400
+        supports_thinking: true
+        thinking_budget: 8192
+        tier: mid
+
+      o3:
+        id: o3
+        display_name: "o3"
+        multimodal: true
+        context_window: 200000
+        cost_per_1k_input: 0.010000
+        cost_per_1k_output: 0.040000
+        supports_thinking: true
+        thinking_budget: 32768
+        tier: max
+
+  anthropic:
+    name: anthropic
+    api_key_env: ANTHROPIC_API_KEY
+    models:
+      claude-haiku-4-5-20251001:
+        id: claude-haiku-4-5-20251001
+        display_name: "Claude Haiku 4.5"
+        multimodal: true
+        context_window: 200000
+        cost_per_1k_input: 0.000800
+        cost_per_1k_output: 0.004000
+        tier: budget
+
+      claude-sonnet-4-6:
+        id: claude-sonnet-4-6
+        display_name: "Claude Sonnet 4.6"
+        multimodal: true
+        context_window: 200000
+        cost_per_1k_input: 0.003000
+        cost_per_1k_output: 0.015000
+        tier: mid
+
+      claude-opus-4-6:
+        id: claude-opus-4-6
+        display_name: "Claude Opus 4.6"
+        multimodal: true
+        context_window: 200000
+        cost_per_1k_input: 0.015000
+        cost_per_1k_output: 0.075000
+        supports_thinking: true
+        thinking_budget: 16000
+        tier: max
+
+  openrouter:
+    name: openrouter
+    api_key_env: OPENROUTER_API_KEY
+    base_url: "https://openrouter.ai/api/v1"
+    models:
+      gemini-flash-1-5-8b:
+        id: google/gemini-flash-1.5-8b
+        display_name: "Gemini Flash 1.5 8B"
+        multimodal: true
+        context_window: 1000000
+        cost_per_1k_input: 0.0000375
+        cost_per_1k_output: 0.000150
+        tier: budget
+
+      gemini-2-0-flash:
+        id: google/gemini-2.0-flash-001
+        display_name: "Gemini 2.0 Flash"
+        multimodal: true
+        context_window: 1000000
+        cost_per_1k_input: 0.000100
+        cost_per_1k_output: 0.000400
+        tier: mid
+
+      deepseek-r1:
+        id: deepseek/deepseek-r1
+        display_name: "DeepSeek R1"
+        context_window: 164000
+        cost_per_1k_input: 0.000550
+        cost_per_1k_output: 0.002190
+        supports_thinking: true
+        tier: max
+
+      groq-llama-3-3-70b:
+        id: meta-llama/llama-3.3-70b-instruct
+        display_name: "Llama 3.3 70B (Groq)"
+        context_window: 128000
+        cost_per_1k_input: 0.000590
+        cost_per_1k_output: 0.000790
+        tier: mid

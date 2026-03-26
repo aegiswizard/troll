@@ -1,0 +1,32 @@
+# configs/default.yaml
+# Troll 🧌 default run configuration
+# Override any value via CLI flags, env vars, or a custom --config file.
+
+mode: benchmark
+provider: openai
+model_tier: mid
+model_id: null
+
+max_steps: 100
+max_budget_usd: 5.0
+max_budget_per_step_usd: 0.20
+
+search:
+  mode: balanced
+  max_branches: 3
+  novelty_weight: 0.4
+  progress_weight: 0.6
+  loop_detection_window: 5
+  max_depth: 3
+
+arc_env_id: null        # set via CLI: --env <id>
+arc_local: true
+arc_server_url: "http://localhost:8080"
+arc_competition_mode: false
+
+artifacts_dir: "./troll_artifacts"
+resume_checkpoint: null
+
+seed: null
+verbose: false
+tags: []
